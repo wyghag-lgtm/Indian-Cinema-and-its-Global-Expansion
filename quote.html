@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Cinema – Project Quote</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="quote.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-icon">🎬</span>
+        <span class="brand-name">Indian Cinema</span>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+        <a href="home.html" class="nav-link">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="history.html" class="nav-link">
+            <span class="nav-icon">📜</span>
+            <span>History</span>
+        </a>
+        <a href="global.html" class="nav-link">
+            <span class="nav-icon">🌍</span>
+            <span>Global</span>
+        </a>
+        <a href="legend.html" class="nav-link">
+            <span class="nav-icon">⭐</span>
+            <span>Legends</span>
+        </a>
+        <a href="events.html" class="nav-link">
+            <span class="nav-icon">📅</span>
+            <span>Events</span>
+        </a>
+        <a href="quote.html" class="nav-link active">
+            <span class="nav-icon">🧮</span>
+            <span>Quote</span>
+        </a>
+    </nav>
+</header>
+
+<!-- ========== PAGE BACKGROUND ========== -->
+<main class="quote-main">
+    <section class="quote-section" aria-label="Project quote calculator">
+        <div class="quote-card">
+
+            <!-- Card header -->
+            <div class="quote-card-header">
+                <div class="icon-circle">
+                    📟
+                </div>
+                <h1>Project Quote</h1>
+                <p>Calculate your film crew costs</p>
+            </div>
+
+            <!-- Card body -->
+            <form class="quote-form" id="quoteForm" novalidate>
+                <!-- Hourly rate -->
+                <div class="form-group">
+                    <label for="hourlyRate">Hourly Rate</label>
+                    <div class="input-wrapper">
+                        <span class="input-prefix" id="currencySymbol">$</span>
+                        <input 
+                            type="number" 
+                            id="hourlyRate" 
+                            name="hourlyRate" 
+                            placeholder="e.g. 50" 
+                            min="0" 
+                            step="0.01" 
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Total hours -->
+                <div class="form-group">
+                    <label for="totalHours">Total Hours</label>
+                    <input 
+                        type="number" 
+                        id="totalHours" 
+                        name="totalHours" 
+                        placeholder="e.g. 40" 
+                        min="0" 
+                        step="0.5" 
+                        required
+                    >
+                </div>
+
+                <!-- Currency -->
+                <div class="form-group">
+                    <label for="currency">Currency</label>
+                    <div class="select-wrapper">
+                        <select id="currency" name="currency">
+                            <option value="USD" selected>USD – US Dollar</option>
+                            <option value="EUR">EUR – Euro</option>
+                            <option value="GBP">GBP – Pound Sterling</option>
+                        </select>
+                    </div>
+                    <p class="helper-text">*Limited to 3 major currencies</p>
+                </div>
+
+                <!-- Error message -->
+                <p class="error-message" id="errorMessage" aria-live="polite"></p>
+
+                <!-- Button -->
+                <button type="submit" class="btn-primary">
+                    Generate Quote
+                </button>
+
+                <!-- Result -->
+                <div class="quote-result" id="quoteResult" aria-live="polite">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <h3>Indian Cinema</h3>
+    <p>Celebrating the colors, emotions, and drama of the world's largest film industry.</p>
+    <p class="footer-made">
+        Made with <span class="heart">❤</span> for Cinema Lovers
+    </p>
+</footer>
+
+<!-- Scripts -->
+<script src="quote.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #dff6ea; /* soft mint */
+    color: #1f1720;
+}
+
+/* ========== NAVBAR (same system as other pages) ========== */
+
+.topbar {
+    width: 100%;
+    background-color: #ffeede;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 2.4rem;
+    border-bottom: 1px solid #f3d1b1;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.brand-icon {
+    font-size: 1.4rem;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    color: #c81457;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+    color: #4b3b30;
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    position: relative;
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.15s ease,
+        color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    background-color: #ffd4b8;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* active tab with wavy underline */
+.nav-link.active {
+    color: #e5286a;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: -6px;
+    height: 4px;
+    border-radius: 999px;
+    background-image: radial-gradient(circle at 2px -2px, #e5286a 4px, transparent 4px);
+    background-size: 10px 8px;
+    background-repeat: repeat-x;
+}
+
+/* ========== TOP TITLE AREA ========== */
+
+.hero-bar {
+    padding: 2.8rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+.hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: clamp(2.4rem, 4.2vw, 3.1rem);
+    color: #03a69a;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.8rem;
+}
+
+.page-subtitle {
+    font-size: 1.02rem;
+    color: #4a5550;
+}
+
+/* ========== MAIN LAYOUT ========== */
+
+.global-main {
+    padding: 0 1.5rem 3.5rem;
+}
+
+.global-section {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.global-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1.1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+/* left image */
+
+.global-image {
+    background: url(global.png);
+    width: 100%;
+    height: 350px;            /* Adjust height to match your screenshot */
+    background: url("global.png") center center / cover no-repeat;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.32);
+}
+
+
+
+.global-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========== CAROUSEL ========== */
+
+.global-carousel {
+    position: relative;
+    border-radius: 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* hide radios */
+.global-carousel input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* slides wrapper */
+.slides {
+    position: relative;
+    border-radius: 30px;
+    background-color: #dceaff;
+    padding: 2.3rem 2.4rem 3rem;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+    overflow: hidden;
+    min-height: 250px;
+}
+
+/* each card (all stacked, only one visible) */
+.slide-card {
+    position: absolute;
+    inset: 0;
+    padding: 2.3rem 2.4rem 3rem;
+    border-radius: 30px;
+    opacity: 0;
+    transform: translateX(18px);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* card colors */
+.slide-blue   { background-color: #dceaff; }
+.slide-yellow { background-color: #ffe8ad; }
+.slide-pink   { background-color: #ffd4dd; }
+.slide-lilac  { background-color: #e9d9ff; }
+.slide-mint   { background-color: #c8f9dc; }
+
+.slide-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #101010;
+}
+
+.slide-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #353238;
+}
+
+/* show selected slide */
+/* 1 */
+#slide1:checked ~ .slides .slide-card:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* 2 */
+#slide2:checked ~ .slides .slide-card:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* 3 */
+#slide3:checked ~ .slides .slide-card:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* 4 */
+#slide4:checked ~ .slides .slide-card:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* 5 */
+#slide5:checked ~ .slides .slide-card:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ========== DOTS / INDICATORS ========== */
+
+.carousel-dots {
+    margin-top: 0.9rem;
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    padding: 0 0.6rem;
+}
+
+.carousel-dots label {
+    flex: 0 0 42px;
+    height: 6px;
+    border-radius: 999px;
+    background-color: #c4cfd5;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        opacity 0.25s ease,
+        flex-basis 0.25s ease;
+    opacity: 0.5;
+}
+
+/* active state for each dot */
+#slide1:checked ~ .carousel-dots label:nth-child(1),
+#slide2:checked ~ .carousel-dots label:nth-child(2),
+#slide3:checked ~ .carousel-dots label:nth-child(3),
+#slide4:checked ~ .carousel-dots label:nth-child(4),
+#slide5:checked ~ .carousel-dots label:nth-child(5) {
+    background-color: #8e95a2;
+    flex-basis: 62px;
+    opacity: 1;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 960px) {
+    .topbar {
+        padding-inline: 1.4rem;
+    }
+
+    .global-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .global-image {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .global-main {
+        padding-inline: 1rem;
+    }
+
+    .slides,
+    .slide-card {
+        padding: 1.9rem 1.7rem 2.6rem;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .carousel-dots label {
+        flex-basis: 32px;
+    }
+
+    #slide1:checked ~ .carousel-dots label:nth-child(1),
+    #slide2:checked ~ .carousel-dots label:nth-child(2),
+    #slide3:checked ~ .carousel-dots label:nth-child(3),
+    #slide4:checked ~ .carousel-dots label:nth-child(4),
+    #slide5:checked ~ .carousel-dots label:nth-child(5) {
+        flex-basis: 46px;
+    }
+}

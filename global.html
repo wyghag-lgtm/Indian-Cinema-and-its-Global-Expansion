@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Cinema – Global Expansion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR (same as other pages) ========== -->
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-icon">🎬</span>
+        <span class="brand-name">Indian Cinema</span>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+        <a href="home.html" class="nav-link">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="history.html" class="nav-link">
+            <span class="nav-icon">📜</span>
+            <span>History</span>
+        </a>
+        <a href="global.html" class="nav-link active">
+            <span class="nav-icon">🌍</span>
+            <span>Global</span>
+        </a>
+        <a href="legend.html" class="nav-link">
+            <span class="nav-icon">⭐</span>
+            <span>Legends</span>
+        </a>
+        <a href="events.html" class="nav-link">
+            <span class="nav-icon">📅</span>
+            <span>Events</span>
+        </a>
+        <a href="quote.html" class="nav-link">
+            <span class="nav-icon">💬</span>
+            <span>Quote</span>
+        </a>
+    </nav>
+</header>
+
+<!-- ========== HERO / TITLE AREA ========== -->
+<section class="hero-bar">
+    <div class="hero-inner">
+        <h1 class="page-title">Global Expansion</h1>
+        <p class="page-subtitle">
+            From Mumbai to Moscow, Indian Cinema connects the world.
+        </p>
+    </div>
+</section>
+
+<!-- ========== MAIN CONTENT ========== -->
+<main class="global-main">
+    <section class="global-section">
+
+        <div class="global-layout">
+            <!-- LEFT: IMAGE -->
+            <figure class="global-image">
+                <!-- Replace src with your map illustration; keep class & structure -->
+                <img src="global-map.jpg">
+            </figure>
+
+            <!-- RIGHT: CAROUSEL (pure HTML + CSS) -->
+            <div class="global-carousel" aria-label="Global impact stories">
+
+                <!-- radio buttons to control slides -->
+                <input type="radio" name="global-slide" id="slide1" checked>
+                <input type="radio" name="global-slide" id="slide2">
+                <input type="radio" name="global-slide" id="slide3">
+                <input type="radio" name="global-slide" id="slide4">
+                <input type="radio" name="global-slide" id="slide5">
+
+                <!-- slides -->
+                <div class="slides">
+                    <!-- 1. Diaspora Connection (blue card) -->
+                    <article class="slide-card slide-blue">
+                        <h2 class="slide-title">The Diaspora Connection</h2>
+                        <p>
+                            From the UK to the USA, the Indian diaspora has made Bollywood a global brand,
+                            with films regularly entering top 10 box office charts.
+                        </p>
+                    </article>
+
+                    <!-- 2. Middle East Market (yellow card) -->
+                    <article class="slide-card slide-yellow">
+                        <h2 class="slide-title">Middle East Market</h2>
+                        <p>
+                            The Middle East is one of the largest overseas markets for Indian films.
+                            Bollywood stars are treated like royalty in Dubai and beyond.
+                        </p>
+                    </article>
+
+                    <!-- 3. Soviet Love Affair (pink card) -->
+                    <article class="slide-card slide-pink">
+                        <h2 class="slide-title">Soviet Love Affair</h2>
+                        <p>
+                            In the 1950s, Raj Kapoor became a household name in the USSR.
+                            Films like <em>Awaara</em> were massive hits, bridging cultural gaps
+                            during the Cold War.
+                        </p>
+                    </article>
+
+                    <!-- 4. Oscar Glory (lavender card) -->
+                    <article class="slide-card slide-lilac">
+                        <h2 class="slide-title">Oscar Glory</h2>
+                        <p>
+                            From <em>Slumdog Millionaire</em> to <em>RRR</em>, Indian stories and talent
+                            are increasingly recognized on the world’s biggest stage.
+                        </p>
+                    </article>
+
+                    <!-- 5. East Asia & China (mint card) -->
+                    <article class="slide-card slide-mint">
+                        <h2 class="slide-title">East Asia &amp; China</h2>
+                        <p>
+                            Aamir Khan’s <em>Dangal</em> broke records in China, earning over $190 million
+                            and opening a massive new market for Indian storytelling.
+                        </p>
+                    </article>
+                </div>
+
+                <!-- carousel indicators -->
+                <div class="carousel-dots" aria-hidden="true">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                    <label for="slide5"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

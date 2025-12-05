@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Cinema – Upcoming Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-icon">🎬</span>
+        <span class="brand-name">Indian Cinema</span>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+        <a href="home.html" class="nav-link">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="history.html" class="nav-link">
+            <span class="nav-icon">📜</span>
+            <span>History</span>
+        </a>
+        <a href="global.html" class="nav-link">
+            <span class="nav-icon">🌍</span>
+            <span>Global</span>
+        </a>
+        <a href="legend.html" class="nav-link">
+            <span class="nav-icon">⭐</span>
+            <span>Legends</span>
+        </a>
+        <a href="events.html" class="nav-link active">
+            <span class="nav-icon">📅</span>
+            <span>Events</span>
+        </a>
+        <a href="quote.html" class="nav-link">
+            <span class="nav-icon">💬</span>
+            <span>Quote</span>
+        </a>
+    </nav>
+</header>
+
+<!-- ========== HERO BANNER ========== -->
+<section class="hero">
+    <!-- put your festival banner as events-hero.jpg or change URL in CSS -->
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Upcoming Events</h1>
+        <p>Experience the magic live</p>
+    </div>
+</section>
+
+<!-- ========== MAIN CONTENT ========== -->
+<main class="events-main">
+
+    <!-- Intro + currency selector -->
+    <section class="events-intro">
+        <p>Browse upcoming cinema events across India.</p>
+
+        <div class="currency-wrapper" aria-label="Currency selector">
+            <span class="currency-label">Currency:</span>
+            <div class="currency-select">
+                <select id="currencySelect">
+                    <option value="INR" selected>INR (₹)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events table -->
+    <section class="events-table-section" aria-label="Upcoming cinema events">
+        <div class="table-wrapper">
+            <table class="events-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Event Name</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Ticket Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="event-name">
+                            <a href="#" class="event-link">Filmfare Awards 2025</a>
+                        </td>
+                        <td>Mumbai, Maharashtra</td>
+                        <td>April 15, 2025</td>
+                        <td class="price" data-base="5000"></td>
+                    </tr>
+                    <tr>
+                        <td class="event-name">
+                            <a href="#" class="event-link">International Film Festival of India (IFFI)</a>
+                        </td>
+                        <td>Goa</td>
+                        <td>November 20, 2025</td>
+                        <td class="price" data-base="2500"></td>
+                    </tr>
+                    <tr>
+                        <td class="event-name">
+                            <a href="#" class="event-link">Jaipur Literature &amp; Film Festival</a>
+                        </td>
+                        <td>Jaipur, Rajasthan</td>
+                        <td>January 24, 2025</td>
+                        <td class="price" data-base="1000"></td>
+                    </tr>
+                    <tr>
+                        <td class="event-name">
+                            <a href="#" class="event-link">Mumbai Film Festival (MAMI)</a>
+                        </td>
+                        <td>Mumbai</td>
+                        <td>October 10, 2025</td>
+                        <td class="price" data-base="1500"></td>
+                    </tr>
+                    <tr>
+                        <td class="event-name">
+                            <a href="#" class="event-link">South Indian International Movie Awards</a>
+                        </td>
+                        <td>Bengaluru</td>
+                        <td>September 12, 2025</td>
+                        <td class="price" data-base="4000"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Lists of Essentials (ordered / unordered) -->
+    <section class="essentials-section">
+        <div class="essentials-card">
+            <div class="essentials-grid">
+                <div class="essentials-column">
+                    <h2>Lists of Essentials</h2>
+                    <h3>Things to bring (unordered)</h3>
+                    <ul>
+                        <li>Valid ID Proof</li>
+                        <li>Booking Confirmation (Digital/Print)</li>
+                        <li>Water Bottle</li>
+                        <li>Camera (if allowed)</li>
+                    </ul>
+                </div>
+                <div class="essentials-column">
+                    <h3>Entry Process (ordered)</h3>
+                    <ol>
+                        <li>Security Check at Gate 1</li>
+                        <li>Ticket Scanning at Counter</li>
+                        <li>Wristband Collection</li>
+                        <li>Enter the Arena</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ========== FOOTER (same style as home) ========== -->
+<footer class="footer">
+    <h3>Indian Cinema</h3>
+    <p>Celebrating the colors, emotions, and drama of the world's largest film industry.</p>
+    <p class="footer-made">
+        Made with <span class="heart">❤</span> for Cinema Lovers
+    </p>
+</footer>
+
+<!-- ========== SIMPLE CURRENCY SCRIPT ========== -->
+<script>
+    // Base prices are in INR
+    const rates = {
+        INR: { symbol: "₹", factor: 1 },
+        USD: { symbol: "$", factor: 0.012 },  // approx
+        EUR: { symbol: "€", factor: 0.011 },  // approx
+        GBP: { symbol: "£", factor: 0.0095 }  // approx
+    };
+
+    function updatePrices(currency) {
+        const { symbol, factor } = rates[currency];
+        document.querySelectorAll(".price").forEach(cell => {
+            const baseInr = Number(cell.getAttribute("data-base")) || 0;
+            const converted = Math.round(baseInr * factor);
+            const value = currency === "INR" ? baseInr : converted;
+            cell.textContent = symbol + " " + value.toLocaleString("en-IN");
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const select = document.getElementById("currencySelect");
+        updatePrices(select.value);
+
+        select.addEventListener("change", () => {
+            updatePrices(select.value);
+        });
+    });
+</script>
+
+</body>
+</html>

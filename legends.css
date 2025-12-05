@@ -1,0 +1,327 @@
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #fff5dc;
+    color: #fefefe;
+}
+
+/* ========== NAVBAR ========== */
+
+.topbar {
+    width: 100%;
+    background-color: #ffeede;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 2.4rem;
+    border-bottom: 1px solid #f3d1b1;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.brand-icon {
+    font-size: 1.4rem;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    color: #c81457;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+    color: #4b3b30;
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    position: relative;
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.15s ease,
+        color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    background-color: #ffd4b8;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* active tab underline */
+
+.nav-link.active {
+    color: #e5286a;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: -6px;
+    height: 4px;
+    border-radius: 999px;
+    background-image: radial-gradient(circle at 2px -2px, #e5286a 4px, transparent 4px);
+    background-size: 10px 8px;
+    background-repeat: repeat-x;
+}
+
+/* ========== HERO BANNER ========== */
+
+.hero {
+    position: relative;
+    height: 260px;
+    background: url("legend-hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.8)
+    );
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.7rem, 4.4vw, 3.3rem);
+    font-weight: 700;
+    color: #ffc82b;
+    letter-spacing: 0.06em;
+}
+
+/* ========== LEGENDS GRID ========== */
+
+.legends-main {
+    padding: 3rem 1.5rem 3.8rem;
+    background-color: #fff5dc;
+}
+
+.legends-section {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+/* card base */
+
+.legend-card {
+    position: relative;
+    border-radius: 24px;
+    padding: 1.7rem 1.9rem 2.1rem;
+    color: #fff5e9;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.24);
+    overflow: hidden;
+    min-height: 230px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.legend-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    cursor: pointer;
+
+}
+
+.card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.star {
+    font-size: 1.4rem;
+    opacity: 0.85;
+}
+
+.badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.45);
+    background-color: rgba(0,0,0,0.18);
+}
+
+/* header with image and name */
+
+.legend-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.legend-photo {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.8);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+.legend-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.legend-header-text {
+    flex: 1;
+}
+
+.legend-name {
+    font-size: 1.45rem;
+    margin-bottom: 0.25rem;
+}
+
+.known-for {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* body text */
+
+.legend-text {
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* decorative corner circle */
+
+.corner-shape {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.12);
+    bottom: -80px;
+    right: -60px;
+}
+
+/* card colors */
+
+.card-dark  { background-color: #252024; }
+.card-purple{ background-color: #6320b3; }
+.card-red   { background-color: #8a1619; }
+.card-brown { background-color: #9a4a10; }
+.card-blue  { background-color: #1842a5; }
+.card-green { background-color: #0b4f37; }
+
+/* ========== FOOTER ========== */
+
+.footer {
+    background-color: #ffefc6;
+    text-align: center;
+    padding: 2.6rem 1.5rem 3rem;
+    border-top: 1px solid #f1dba4;
+}
+
+.footer h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #312426;
+}
+
+.footer p {
+    font-size: 0.96rem;
+    color: #564946;
+    margin-bottom: 0.5rem;
+}
+
+.footer-made {
+    font-size: 0.9rem;
+}
+
+.footer-made .heart {
+    color: #ff2270;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+    .legend-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topbar {
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .legends-main {
+        padding-inline: 1rem;
+    }
+
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 230px;
+    }
+}
